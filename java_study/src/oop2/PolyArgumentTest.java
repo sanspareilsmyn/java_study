@@ -1,5 +1,7 @@
 package oop2;
 
+import java.util.*;
+
 public class PolyArgumentTest {
 
 	public static void main(String[] args) {
@@ -20,6 +22,7 @@ public class PolyArgumentTest {
 class Buyer{
 	int money = 1000;
 	int bonusPoint = 0;
+	Vector item = new Vector();
 	
 	void buy(Product p) {
 		if(money < p.price) {
@@ -29,6 +32,7 @@ class Buyer{
 		
 		money -= p.price;
 		bonusPoint += p.bonusPoint;
+		item.add(p);
 		System.out.println(p + "을/를 구입하셨습니다.");
 	}
 }
