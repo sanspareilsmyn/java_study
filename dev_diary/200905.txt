@@ -1,0 +1,42 @@
+** 알게 된 것 **
+1. is-a(상속), has-a relationship(포함)을 이용해 상속/포함 클래스를 잘 정의하자.
+
+2. C++랑 다르게 Java는 단일상속만 허용한다. 왜?
+선언부만 같고 내용이 다른 두 메서드는 어떻게 구분함?
+클래스 메서드면 static 붙여서 메서드 이름 앞에 클래스 이름을 붙일 수 있겠지만
+인스턴스 메서드는 구별 불가능.
+
+3. 모든 클래스의 조상은 Object 클래스다. 우리가 toString()이나  equlas(Object o) 그냥 쓴 것도 Object 자동상속 때문.
+
+4. 오버라이딩은 조상 클래스로부터 상속받은 메서드 내용 변경하는 것.
+오버로딩이랑 헷갈리지 않게 주의.
+
+5. super는 자손 클래스에서 조상 클래스로부터 상속받은 멤버를 참조하는데 사용되는 참조변수다.
+Object클래스를 제외한 모든 클래스의 생성자 첫 줄에는 생성자(같은 클래스의 다른 생성자 또는 조상의 생성자)를 호출해야 한다.
+그렇지 않으면 컴파일러가 자동으로 super();를 생성자의 첫줄에 삽입한다.
+
+6. import java.*; 를 한다고 해서 자동으로 import java.util.*;가 되는 것은 아니다.
+하위 패키지 클래스 포함 안 되기 때문.
+단, import java.lang.*;는 자동으로 선언되게 박혀 있음.
+
+7. 제어자(modifier)
+접근 제어자 : public, protected(같은 패키지 내, 다른 패키지 자손 클래스), default(같은 패키지 내), private(같은 클래스 내)
+그 외 : static, final, abstract, native, transient, synchronized, volatile, strictfp
+
+8. 클래스에 final 붙이면 상속 대상이 안 되고, 메서드에 final 붙이면 오버라이딩 안 된다.
+단 final 붙인 멤버변수는 선언과 함께 초기화하지 안고 생성자에서 딱 한 번 초기화하는 게 가능하다.
+
+9. 다형성
+CaptionTv c = new CaptionTV();와 Tv t = new CaptionTV();는 어떻게 다른가?
+Tv t로 사용하면 CaptionTV에서 추가로 정의된 멤버변수에는 접근 못 함.
+그럼 왜 이런 짓을 하는가?
+
+10. Up-casting(자손 -> 조상) / Down-casting(조상 -> 자손)
+업캐스팅에서는 형변환 생략해도 되는데 다운캐스팅에서는 형변환 생략하면 안 됨.
+
+11. instanceof 연산자를 통해 형변환 가능 여부 체크 가능
+
+12. Parent p = new Child()와 Child c = new Child()를 생각해보자.
+p의 멤버 변수를 참조하면 Parent의 것이 나온다. 하지만 Child의 메소드가 Parent의 메소드를 오버라이딩하고 있다면
+p에서 메소드는 Child 것이 튀어나온다.
+
