@@ -1,0 +1,6 @@
+-----------------
+예외발생시간 : Tue Sep 08 20:55:34 KST 2020
+java.lang.ArithmeticException: / by zero
+	at exception.Exception3.main(Exception3.java:19)
+예외메시지 : / by zero
+-----------------
