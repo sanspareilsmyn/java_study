@@ -25,3 +25,5 @@
 
 #6. 사용자정의 예외 만들기
 - class MyException extends Exception{ MyException(String msg) {super(msg);}}
+
+# 65 300
