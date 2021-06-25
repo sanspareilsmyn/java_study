@@ -20,4 +20,20 @@
 - 효율적으로 다 지우려면 뒤에서부터 지워야 된다.
 - ArrayList의 장점 : 배열은 구조가 간단하고 access time이 짧다. 단점 : 크기를 변경할 수 없고 비순차적인 데이터의 추가, 삭제 -> 시간 많이 걸림.
 
-#4. LinkedList
+#4. Enumeration, Iterator, ListIterator
+- hasNext(), next()가 핵심.
+- Iterator는 컬렉션에 저장된 요소들을 읽어오는 방법을 표준화한 것.
+- 컬렉션에 iterator()를 호출해서 Iterator를 구현한 객체를 얻어서 사용. -> 코드 재사용성 올라감.
+- ListIterator는 양방향 iterator 지원하지만 자주 사용되지는 않음.
+
+#5. HashSet, TreeSet
+- HashSet은 중복 안 된다.
+- boolean add(Object o)는 저장할 객체의 equals()와 hashCode()를 호출. 이 두 메서드가 오버라이딩 되어 있어야 함.
+- JDK1.8부터는 Objects.hash() 메서드를 사용하면 됨.
+- hashCode()의 오버라이딩 조건
+    - 동일 객체에 대해 hashCode()를 여러 번 호출해도 같은 값을 반환해야 한다.
+    - equals()로 비교해서 true를 얻은 두 객체의 hashCode()값은 일치해야 한다.
+    
+#6. Properties
+- 내부적으로 Hashtable을 사용하며, key와 value를 String으로 저장.
+- 주로 애플리케이션의 환경설정에 관련된 속성을 저장하는데 사용되며 파일로부터 편리하게 값을 읽고 쓸 수 있는 메서드를 제공한다.
